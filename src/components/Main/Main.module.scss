@@ -1,0 +1,95 @@
+@mixin dimensions($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin possitionTopLeft($position, $top, $left) {
+  position: $position;
+  top: $top;
+  left: $left;
+}
+
+@mixin image($url, $position, $size) {
+  background: url($url) no-repeat;
+  background-position: $position;
+  background-size: $size;
+}
+
+@mixin font($family, $color, $size, $transform, $align) {
+  font-family: $family;
+  color: $color;
+  font-size: $size;
+  text-transform: $transform;
+  text-align: $align;
+}
+
+.main {
+  @include dimensions(100vw, 70vw);
+
+  .background {
+    @include possitionTopLeft(absolute, 0, 0);
+    @include dimensions(100vw, 70vw);
+    @include image('../../assets/images/background.png', center, 100%);
+    z-index: -1;
+  }
+
+  .background:before {
+    content: '';
+    @include dimensions(100vw, 70vw);
+
+    @include possitionTopLeft(absolute, 0, 0);
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+  }
+}
+
+.header {
+  @include possitionTopLeft(relative, 1vw, 1vw);
+
+  .logo {
+    @include possitionTopLeft(absolute, 1vw, 1vw);
+    @include dimensions(7vw, 2.5vw);
+    @include image('../../assets/images/logo.png', center, 100%);
+  }
+
+  .navbar {
+    @include possitionTopLeft(relative, 2vw, 50%);
+    transform: translate(-50%);
+    @include dimensions(60vw, 3vw);
+
+    display: flex;
+    gap: 7vw;
+
+    span {
+      transform: scale(1, 1.7);
+    }
+  }
+}
+
+.block {
+  @include possitionTopLeft(relative, 15vw, 50%);
+  transform: translate(-50%);
+
+  @include dimensions(50vw, 25vw);
+
+  border: solid 0.1vw rgba(164, 164, 164, 0.5);
+
+  p {
+    @include possitionTopLeft(relative, 1vw, 50%);
+    transform: translate(-50%);
+    @include dimensions(40vw, 5vw);
+
+    @include font('Sansation-Regular', white, 1vw, none, center);
+  }
+
+  button {
+    @include possitionTopLeft(relative, 1vw, 50%);
+    transform: translate(-50%);
+    @include dimensions(11vw, 3.5vw);
+
+    border: solid 0.2vw white;
+    @include font('Sansation-Bold', white, 1.2vw, uppercase, center);
+    background: transparent;
+  }
+}

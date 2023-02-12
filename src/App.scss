@@ -1,0 +1,48 @@
+@mixin dimensions($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin possitionTopLeft($position, $top, $left) {
+  position: $position;
+  top: $top;
+  left: $left;
+}
+
+@mixin image($url, $position, $size) {
+  background: url($url) no-repeat;
+  background-position: $position;
+  background-size: $size;
+}
+
+@mixin font($family, $color, $size, $transform, $align) {
+  font-family: $family;
+  color: $color;
+  font-size: $size;
+  text-transform: $transform;
+  text-align: $align;
+}
+
+.App {
+  @include dimensions(100vw, 700vw);
+
+  h1 {
+    @include font('Sansation-Bold', white, 4vw, uppercase, center);
+  }
+
+  span {
+    @include font('Sansation-Regular', white, 1.3vw, none, center);
+  }
+}
+
+@font-face {
+  /* Sansation-Bold */
+  font-family: "Sansation-Bold";
+  src: url("./assets/fonts/Sansation/Sansation_Bold.ttf") format("truetype");
+}
+
+@font-face {
+  /* Sansation-Regular */
+  font-family: "Sansation-Regular";
+  src: url("./assets/fonts/Sansation/Sansation_Regular.ttf") format("truetype");
+}
