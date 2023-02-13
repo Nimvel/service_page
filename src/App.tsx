@@ -2,6 +2,8 @@ import './App.scss';
 import Main from './components/Main/Main';
 import About from './components/About/About';
 import Service from './components/Service/Service';
+import Feedback from './components/Feedback/Feedback';
+import Clients from './components/Clients/Clients';
 
 function App() {
   return (
@@ -9,8 +11,8 @@ function App() {
       <Main />
       <About />
       <Service />
-      feedback
-      clients
+      <Feedback />
+      <Clients />
     </div>
   );
 }

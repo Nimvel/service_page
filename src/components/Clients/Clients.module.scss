@@ -1,0 +1,85 @@
+@mixin dimensions($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin possitionTopLeft($position, $top, $left) {
+  position: $position;
+  top: $top;
+  left: $left;
+}
+
+@mixin image($url, $position, $size) {
+  background: url($url) no-repeat;
+  background-position: $position;
+  background-size: $size;
+}
+
+@mixin font($family, $color, $size, $transform, $align) {
+  font-family: $family;
+  color: $color;
+  font-size: $size;
+  text-transform: $transform;
+  text-align: $align;
+}
+
+.clients {
+  background-color: white;
+  @include dimensions(100vw, 40vw);
+
+  h1 {
+    color: #3e3e3e;
+    @include possitionTopLeft(relative, 0, 0);
+  }
+}
+
+.columns {
+  @include dimensions(90vw, 20vw);
+
+  @include possitionTopLeft(relative, 5vw, 50%);
+  transform: translate(-50%);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+
+  div {
+    @include possitionTopLeft(relative, 0, 50%);
+    transform: translate(-50%);
+    @include dimensions(17vw, 10vw);
+  }
+
+  .img_4_1 {
+    @include image('../../assets/images/img_4_1.png', center, 100%);
+  }
+
+  .img_4_2 {
+    @include image('../../assets/images/img_4_2.png', center, 100%);
+  }
+
+  .img_4_3 {
+    @include image('../../assets/images/img_4_3.png', center, 100%);
+  }
+
+  .img_4_4 {
+    @include image('../../assets/images/img_4_4.png', center, 100%);
+  }
+
+  .img_4_5 {
+    @include image('../../assets/images/img_4_5.png', center, 100%);
+  }
+
+  .img_4_6 {
+    @include dimensions(10vw, 10vw);
+    @include image('../../assets/images/img_4_6.png', center, 100%);
+  }
+
+  .img_4_7 {
+    @include dimensions(10vw, 10vw);
+    @include image('../../assets/images/img_4_7.png', center, 100%);
+  }
+
+  .img_4_8 {
+    @include dimensions(10vw, 10vw);
+    @include image('../../assets/images/img_4_8.png', center, 100%);
+  }
+}

@@ -24,7 +24,11 @@
 }
 
 .main {
-  @include dimensions(100vw, 70vw);
+  @include dimensions(100vw, 50vw);
+
+  h1 {
+    @include possitionTopLeft(relative, 0, 0);
+  }
 
   .background {
     @include possitionTopLeft(absolute, 0, 0);
@@ -63,6 +67,11 @@
 
     span {
       transform: scale(1, 1.7);
+      cursor: pointer;
+    }
+
+    span:hover {
+      color: #177f8b;
     }
   }
 }

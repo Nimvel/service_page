@@ -24,7 +24,7 @@
 }
 
 .about {
-  @include possitionTopLeft(relative, -17vw, 0);
+  @include possitionTopLeft(relative, 0, 0);
   background-color: white;
   @include dimensions(100vw, 35vw);
   display: flex;

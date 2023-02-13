@@ -24,22 +24,21 @@
 }
 
 .service {
-  @include possitionTopLeft(relative, -17vw, 0);
   background-color: #383838;
-  @include dimensions(100vw, 100vw);
-  
+  @include dimensions(100vw, 59vw);
 }
 
 .columns {
   @include possitionTopLeft(relative, 5vw, 0);
+  background-color: #3e3e3e;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 1vw;
 }
 
 .block {
   @include dimensions(30vw, 30vw);
   padding: 10vw 0;
+  border-left: solid 0.2vw #3e3e3e;
 
   .img_2 {
       @include possitionTopLeft(relative, 0, 50%);
@@ -74,4 +73,5 @@
 
 .block:hover {
   background-color: #177f8b;
+  border-left: solid 0.2vw white;
 }

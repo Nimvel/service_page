@@ -24,7 +24,7 @@
 }
 
 .App {
-  @include dimensions(100vw, 700vw);
+  @include dimensions(100vw, 300vw);
 
   h1 {
     @include possitionTopLeft(relative, 5vw, 0);

@@ -1,0 +1,104 @@
+@mixin dimensions($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin possitionTopLeft($position, $top, $left) {
+  position: $position;
+  top: $top;
+  left: $left;
+}
+
+@mixin image($url, $position, $size) {
+  background: url($url) no-repeat;
+  background-position: $position;
+  background-size: $size;
+}
+
+@mixin font($family, $color, $size, $transform, $align) {
+  font-family: $family;
+  color: $color;
+  font-size: $size;
+  text-transform: $transform;
+  text-align: $align;
+}
+
+.feedback {
+  background-color: #383838;
+  @include dimensions(100vw, 50vw);
+}
+
+.columns {
+  @include possitionTopLeft(relative, 5vw, 0);
+  background-color: #3e3e3e;
+  display: grid;
+  grid-template-columns: 30vw 23vw 23vw 23vw;
+
+  .column_1 {
+    @include dimensions(30vw, 20vw);
+  @include possitionTopLeft(relative, 50%, 50%);
+  transform: translate(-50%, -50%);
+
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+
+    justify-content: center;
+
+    p {
+      @include dimensions(20vw, 5vw);
+      @include font('Sansation-Regular', white, 1.6vw, none, center);
+    }
+
+    p:after {
+      content: '';
+  @include possitionTopLeft(absolute, 8.5vw, 12vw);
+      @include dimensions(5vw, 0.2vw);
+      border-bottom: solid 0.1vw white;
+
+    }
+
+    span {
+      @include dimensions(3vw, 3vw);
+      @include possitionTopLeft(relative, 2vw, 50%);
+      transform: translate(-50%);
+    }
+  }
+
+  .img_3_1 {
+    @include dimensions(20vw, 25vw);
+    @include image('../../assets/images/img_3_1.png', 85%, 200%);
+    z-index: -1;
+  }
+
+  .img_3_2 {
+    @include dimensions(20vw, 25vw);
+    @include image('../../assets/images/img_3_2.png', 100%, 180%);
+    z-index: -1;
+  }
+
+  .img_3_3 {
+    @include dimensions(20vw, 25vw);
+    @include image('../../assets/images/img_3_3.png', 100% 20%, 120%);
+    z-index: -1;
+  }
+}
+
+.block {
+  @include possitionTopLeft(relative, -5vw, 0);
+
+  @include dimensions(30vw, 5vw);
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+
+  p {
+    @include dimensions(4vw, 2.5vw);
+    @include font('Sansation-Regular', black, 1.3vw, none, center);
+    padding-top: 1vw;
+    background-color: white;
+  }
+
+  .name {
+    @include dimensions(7vw, 2.5vw);
+    padding: 0.5vw 3vw;
+  }
+}
