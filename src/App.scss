@@ -27,11 +27,16 @@
   @include dimensions(100vw, 700vw);
 
   h1 {
+    @include possitionTopLeft(relative, 5vw, 0);
     @include font('Sansation-Bold', white, 4vw, uppercase, center);
   }
 
   span {
     @include font('Sansation-Regular', white, 1.3vw, none, center);
+  }
+
+  button {
+    cursor: pointer;
   }
 }
 

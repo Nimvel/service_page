@@ -26,7 +26,7 @@
 .about {
   @include possitionTopLeft(relative, -17vw, 0);
   background-color: white;
-  @include dimensions(100vw, 100vw);
+  @include dimensions(100vw, 35vw);
   display: flex;
 
   .img_1 {
@@ -64,6 +64,6 @@
     border: none;
     border-radius: 0.5vw;
     @include font('Sansation-Regular', white, 1.2vw, uppercase, center);
-    background: #379894;
+    background: #177f8b;
   }
 }

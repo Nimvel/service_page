@@ -1,0 +1,77 @@
+@mixin dimensions($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin possitionTopLeft($position, $top, $left) {
+  position: $position;
+  top: $top;
+  left: $left;
+}
+
+@mixin image($url, $position, $size) {
+  background: url($url) no-repeat;
+  background-position: $position;
+  background-size: $size;
+}
+
+@mixin font($family, $color, $size, $transform, $align) {
+  font-family: $family;
+  color: $color;
+  font-size: $size;
+  text-transform: $transform;
+  text-align: $align;
+}
+
+.service {
+  @include possitionTopLeft(relative, -17vw, 0);
+  background-color: #383838;
+  @include dimensions(100vw, 100vw);
+  
+}
+
+.columns {
+  @include possitionTopLeft(relative, 5vw, 0);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1vw;
+}
+
+.block {
+  @include dimensions(30vw, 30vw);
+  padding: 10vw 0;
+
+  .img_2 {
+      @include possitionTopLeft(relative, 0, 50%);
+      margin-bottom: 5vw;
+      transform: translate(-50%);
+      @include dimensions(12vw, 7vw);
+      @include image('../../assets/images/img_2.png', center, 100%);
+  }
+
+  h2 {
+    @include font('Sansation-Bold', white, 2vw, uppercase, center);
+  }
+
+  p {
+    @include possitionTopLeft(relative, 0, 50%);
+    transform: translate(-50%);
+    @include dimensions(28vw, 5vw);
+    @include font('Sansation-Regular', white, 1.3vw, none, center);
+  }
+
+  button {
+    @include possitionTopLeft(relative, 2vw, 50%);
+    transform: translate(-50%);
+    @include dimensions(13vw, 3vw);
+
+    border: none;
+    border-radius: 0.5vw;
+    @include font('Sansation-Regular', white, 1.2vw, uppercase, center);
+    background: #a9a9a9;
+  }
+}
+
+.block:hover {
+  background-color: #177f8b;
+}
